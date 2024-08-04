@@ -202,7 +202,7 @@ button:active{
     <div id="main">
 
         <div id="img">
-            <img src="mpp.png" alt="maha">
+            <img src="mpp.webp" alt="maha">
         </div>
 
         <div class="header">
