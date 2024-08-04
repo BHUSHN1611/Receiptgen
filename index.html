@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maha power pay</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form id="detailsForm">
+            <img src="mpp.png" alt="MSEDCL-MahaPowerPay">
+            <h1>Maha Power Pay.com</h1>
+            <label for="paymentDate">Payment Date and Time:</label>
+            <input type="datetime-local" id="paymentDate" name="paymentDate" readonly>
+            <label for="consumerNumber">Consumer Number:</label>
+            <input type="number" id="consumerNumber" name="consumerNumber" required>
+            <label for="consumerName">Consumer Name:</label>
+            <input type="text" id="consumerName" name="consumerName" required>
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" required>
+            <button type="button" onclick="printDetails()">Submit</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
