@@ -14,7 +14,7 @@
             <label for="paymentDate">Payment Date and Time:</label>
             <input type="datetime-local" id="paymentDate" name="paymentDate" readonly>
             <label for="consumerNumber">Consumer Number:</label>
-            <input type="number" id="consumerNumber" name="consumerNumber" maxlength="12" required>
+            <input type="tel" id="consumerNumber" name="consumerNumber" maxlength="12" pattern="\d{10}" required>
             <label for="consumerName">Consumer Name:</label>
             <input type="text" id="consumerName" name="consumerName" required>
             <label for="amount">Amount:</label>
