@@ -42,9 +42,18 @@ function convertNumberToMarathiWords(number) {
 
 function setCurrentDateTime() {
     const now = new Date();
-    const offsetIST = now.getTime() + (5.5 * 60 * 60 * 1000);
-    const nowIST = new Date(offsetIST);
-    const formattedDateTime = nowIST.toISOString().slice(0, 16);
+    
+    const options = {
+        timeZone: 'Asia/Kolkata',
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+    };
+    
+    const formattedDateTime = new Intl.DateTimeFormat('en-GB', options).format(now).replace(',', '');
     document.getElementById('paymentDate').value = formattedDateTime;
 }
 
@@ -65,136 +74,144 @@ function printDetails() {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+
+    *{
+        margin: 0;
+        padding: 0;
+        border: border-box;   
+        font-family: Arial; 
+    }
+    
+    #main{
+        height:600px;
+        width: 390px;
+        border: 1px solid rgb(0, 0, 0);
+        margin-left:auto ;
+        margin-right: auto;
+        position: relative;
+    }
+    img{
+        height: 75px;
+        width: 175px;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+    }
+    h4{
+        text-align: center;
+        margin: 10px;
+        font-size: 14.5px;
+        margin-left:45px;
+        margin-right:45px;   
+    }
+    .header{
+        text-align: center;
+        margin: 10px;
+        font-size: 13px;
+        margin-left:45px;
+        margin-right:45px;  
+    }
+    .section>pre>p{
+        text-align: left;
+        font-size: 13px;
+        margin-left:45px;
+        margin-right:45px;
+        margin-top: 0px;
+        margin-bottom: -2.5px;
+        font-weight: 545;
+    }
+    
+    #line{
+        border-top: 1.5px dashed rgb(0, 0, 0);
+        margin-left: 45px;
+        margin-right:45px ;
+        margin-top:4px;
+        margin-bottom:2px;
+    }
+    #consemerdetails{
+        text-align: center;
+        margin: 2px;
+        font-size: 13.5px;
+        margin-left:45px;
+        margin-right:45px;
+    }
+    .details>pre>p{
+        text-align: left;
+        margin-right: 45px;
+        margin-left: 45px;
+        font-size: 13px;
+        margin-top: 0px;
+        margin-bottom: -2.5px;
+    }
+    #amt{
+        text-align: left;
+        margin-left:45px;
+        margin-right:45px;
+        font-size: 13px;
+        margin-top: 0px;
+        margin-bottom: -2.5px;
+    }
+    #amt1{
+        text-align: left;
+        margin-left:45px;
+        margin-right:45px;
+        font-size: 13px;
+        margin-top: 0px;
+        margin-bottom: -2.5px;
         
-*{
-    margin: 0;
-    padding: 0;
-    border: border-box;   
-    font-family: Arial; 
-}
-
-#main{
-    height:550px;
-    width: 400px;
-    border: 1px solid rgb(255,255,255);
-    margin-left:auto ;
-    margin-right: auto;
-    position: relative;
-}
-img{
-    height: 55px;
-    width:125px;
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-}
-h4{
-    text-align: center;
-    margin: 10px;
-    font-size: 12px;   
-}
-.header{
-    text-align: center;
-    margin: 10px;
-    font-size: 12px;   
-}
-.section>pre>p{
-    text-align: left;
-    margin-left: 55px;
-    font-size: 12px;
-    margin-top: 0px;
-    margin-bottom: -2.5px;
-    font-weight: 545;
-}
-
-#line{
-    border-top: 1.5px dashed rgb(0, 0, 0);
-    margin-left: 55px;
-    margin-right:45px ;
-    margin-top:4px;
-    margin-bottom:2px;
-}
-#consemerdetails{
-    text-align: center;
-    margin: 2px;
-    font-size: 12.5px;   
-
-}
-.details>pre>p{
-    text-align: left;
-    margin-right: 11.5px;
-    margin-left: 55px;
-    font-size: 12px;
-    margin-top: 0px;
-    margin-bottom: -2.5px;
-}
-#amt{
-    text-align: left;
-    margin-right: 11.5px;
-    margin-left: 55px;
-    font-size: 12px;
-    margin-top: 0px;
-    margin-bottom: -2.5px;
-}
-#amt1{
-    text-align: left;
-    margin-right: 11.5px;
-    margin-left: 55px;
-    font-size: 12px;
-    margin-top: 0px;
-    margin-bottom: -2.5px;
+    }
+    #amt2{
+        text-align: left;
+        margin-left:45px;
+        margin-right:45px;
+        font-size: 13px;
+        margin-top: 0px;
+        margin-bottom: -2.5px;
+        
+    }
+    .footer{
+        text-align: left;
+        margin-left:45px;
+        margin-right:45px;
+        font-size: 12px;
+        margin-top: 0px;
+        margin-bottom: -2.5px;
+    }
+    .lastfooter{
+        text-align: center;
+        margin-left:45px;
+        margin-right:45px;
+        font-size: 12px;
+        margin-top: 1px;
+        margin-bottom: -2.5px;
     
-}
-#amt2{
-    text-align: left;
-    margin-right: 11.5px;
-    margin-left: 55px;
-    font-size: 12px;
-    margin-top: 0px;
-    margin-bottom: -2.5px;
+    }
     
-}
-.footer{
-    text-align: left;
-    margin-left: 55px;
-    margin-right: 11.5px;
-    font-size: 11.5px;
-    margin-top: 0px;
-    margin-bottom: -2.5px;
-}
-.lastfooter{
-    text-align: center;
-    margin-left: 55px;
-    margin-right: 11.5px;
-    font-size: 11.5px;
-    margin-top: 1px;
-    margin-bottom: -2.5px;
-}
-button {
-    background-color: rgb(0, 132, 255);;
-    border:none;
-    border-radius: 4px;
-    color: white;
-    height:36px;
-    width: 105px;
-    font-weight: 500;
-    font-size:16px;
-    cursor:pointer;
-    margin-right:8px;
-    transition: opacity 0.15s ;
-    margin-left: 390px;
-    margin-top:20px;
+    button {
+        background-color: rgb(0, 145, 255);;
+        border:none;
+        border-radius: 2px;
+        color: white;
+        height:36px;
+        width: 105px;
+        font-weight: 500;
+        cursor:pointer;
+        margin-right:45px;
+        transition: opacity 0.15s ;
+        margin-left: 135px;
+        margin-top:20px;
+        
     
-
-}
-button:hover{
-    opacity: 0.8;
-
-}
-button:active{
-    opacity: 0.5;
-}
+    }
+    button:hover{
+        opacity: 0.8;
+    
+    }
+    button:active{
+        opacity: 0.5;
+    }
+    
 
     </style>
 </head>
@@ -202,7 +219,7 @@ button:active{
     <div id="main">
 
         <div id="img">
-            <img src="mpp.png" alt="maha">
+            <img src="mpp.webp" alt="maha">
         </div>
 
         <div class="header">
@@ -213,31 +230,31 @@ button:active{
         </div>
 
         <div class="section">
-            <pre><p>देय दिनांक:                                      ${new Date(paymentDate).toLocaleString('en-IN' ,{ timeZone: 'Asia/Kolkata' })}</p></pre>
-            <pre><p>पावती नं:                                         W281250058407</p></pre>
+            <pre><p>देय दिनांक:                                     ${paymentDate}</p></pre>
+            <pre><p>पावती नं:                                           W281250058407</p></pre>
             <pre><p>बिल नं:                                           000002501626583</p></pre>
         </div>
             <hr id="line">
         <div id="consemerdetails">ग्राहक तपशील</div>
 
         <div class="details">
-                <pre><p>ग्राहक नं:                                      ${consumerNumber}</p></pre>
-                <pre><p>ग्राहकाचे नाव:                         ${consumerName}</p></pre>
+                <pre><p>ग्राहक नं:                                            ${consumerNumber}</p></pre>
+                <pre><p>ग्राहकाचे नाव:             ${consumerName}</p></pre>
                 <pre><p>बि.यु./चौ./उपविभाग:                4706-5/विरार पूव</p></pre>
                 <pre><p>विभाग:                                   विरार</p></pre>
                 <pre><p>मंडळ:                                    वसई</p></pre>
         </div>
             <hr id="line">
         <div id="amt">
-                 <pre><p>पावती                                                                       रक्कम</p></pre>
+                 <pre><p>पावती                                                                 रक्कम</p></pre>
         </div>
             <hr id="line">
         <div id="amt1">
-                <pre><p>01-वीज देयक                                                             ${amount}</p></pre>
+                <pre><p>01-वीज देयक                                                     ${amount}</p></pre>
         </div>
            <hr id="line">
         <div id="amt2">
-            <pre><p>एकूण देय रक्कम:                                                        ${amount}</p></pre>
+            <pre><p>एकूण देय रक्कम:                                                ${amount}</p></pre>
             <pre><p>अक्षरी:              ${amountInWords}</p></pre>
             <pre><p>देय माध्यम :           रोख</p></pre>
         </div>
@@ -249,8 +266,12 @@ button:active{
         <div class="lastfooter">
             <p>*** MSEDCL-MahaPowerPay v1.7.2 ***</p>
         </div>
+        
+        <button onclick="window.print()">Print</button>
+      
     </div>
-    <button onclick="window.print()">Print</button>
+    
+   
 </body>
 </html>
         `);
