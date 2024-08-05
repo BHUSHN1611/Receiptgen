@@ -85,7 +85,7 @@ function printDetails() {
     #main{
         height:600px;
         width: 390px;
-        border: 1px solid rgb(0, 0, 0);
+        border: 1px solid rgb(255, 255, 255);
         margin-left:auto ;
         margin-right: auto;
         position: relative;
