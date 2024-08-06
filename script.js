@@ -279,6 +279,18 @@ function printDetails() {
     } else {
         alert('Please fill out all fields.');
     }
+    
+}
+function clearForm() {
+    document.getElementById('detailsForm').reset();
+    setCurrentDateTime();
+}
+
+function submitAndPrintDetails() {
+    printDetails();
+    clearForm();
 }
 
 window.onload = setCurrentDateTime;
+
+setInterval(setCurrentDateTime, 120000);
