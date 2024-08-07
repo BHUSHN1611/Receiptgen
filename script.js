@@ -170,14 +170,6 @@ function printDetails() {
         margin-bottom: -2.5px;
         
     }
-    .footer{
-        text-align: left;
-        margin-left:45px;
-        margin-right:45px;
-        font-size: 12px;
-        margin-top: 0px;
-        margin-bottom: -2.5px;
-    }
     .lastfooter{
         text-align: center;
         margin-left:45px;
@@ -257,11 +249,6 @@ function printDetails() {
             <pre><p>एकूण देय रक्कम:                                                ${amount}</p></pre>
             <pre><p>अक्षरी:              ${amountInWords}</p></pre>
             <pre><p>देय माध्यम :           रोख</p></pre>
-        </div>
-        <div class="footer">
-            <div>
-                <p>१/ चे मुद्रांक शुल्क, भारतीय मुद्रांक कायदा 1899 च्या कलम 53 नुसार अदा केले जाते. सदर शुल्क महाराष्ट्र सरकारचे कोषागारात, अतिरिक्त नियंत्रक-मुद्रांक, मुंबई, जनरल पोस्ट ऑफीस, फोर्ट, मुंबई 400001, यांच्या आदेश नं. (LOA/ENF-2/LOA/ENF-2/CSD/64/2024/(Validity Period Dt.11/07/2024 to Dt. 31/12/2025)/2830 Dt. 11.07.2024 GRN No.MH004618017202425E DT.02-JUL-24, Bank of Maharashtra,) GRAS DEFACE NO.0002670590202425 dt. 09-JUL-24 नुसार भरलेला एकत्रित मुद्रांक शुल्कामध्ये सामाविष्ट आहे.</p>
-            </div>
         </div>
         <div class="lastfooter">
             <p>*** MSEDCL-MahaPowerPay v1.7.2 ***</p>
