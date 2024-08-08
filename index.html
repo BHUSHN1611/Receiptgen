@@ -7,22 +7,49 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <form id="detailsForm">
-            <img src="mpp.webp" alt="MSEDCL-MahaPowerPay">
-            <h1>Maha Power Pay.com</h1>
-            <label for="paymentDate">Payment Date and Time:</label>
-            <input type="text" id="paymentDate" name="paymentDate" readonly>
-            <label for="consumerNumber">Consumer Number:</label>
-            <input type="tel" id="consumerNumber" name="consumerNumber" maxlength="12" pattern="\d{10}" required>
-            <label for="consumerName">Consumer Name:</label>
-            <input type="text" id="consumerName" name="consumerName" required>
-            <label for="amount">Amount:</label>
-            <input type="number" id="amount" name="amount" required>
-            <button class="custom-btn btn-2" type="button" onclick="submitAndPrintDetails()">Submit</button>
+    <nav class="navbar">
+        <div class="navdiv">
+            <div class="logo">
+                <a href=""><img src="mpp.webp" alt="MSEDCL-MahaPowerPay"></a>
+                
+            </div>
+            <ul>
+                <li><a href="">Pay bill</a></li>
+                <li><a href="viewData.html">Statement</a></li>
+                <li><a href="">About us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="container">
+        <header>Bill Payment</header>
+        <form action="#" class="form">
+
+            <label for="consumerNumber">Consumer Number</label>
+            <div class="input-box">
+                <input type="text" id="consumerNumber" placeholder="Consumer No" name="consumerNumber" maxlength="12" required>
+            </div>
+
+            <label for="consumerName">Consumer Name</label>
+            <div class="input-box">
+                <input type="text" name="consumerName" id="consumerName" placeholder="Consumer Name" required>
+            </div>
+
+            <label for="amount">Amount</label>
+            <div class="input-box">
+                <input type="number" name="amount" id="amount" placeholder="Amount" required>
+            </div>
+            
+            <label for="date">Date</label>
+            <div class="input-box">
+                <input type="text" name="paymentDate" id="paymentDate" placeholder="Date" readonly>
+            </div>
+
+            <div class="btn-pay">
+                <button onclick="submitAndPrintDetails()">Pay</button>
+            </div>
         </form>
-        <button id="vd" type="button" onclick="viewStoredData()">View Stored Data</button>
-    </div>
+    </section>
     <script src="script.js"></script>
 </body>
 </html>

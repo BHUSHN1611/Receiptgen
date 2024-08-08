@@ -83,7 +83,7 @@ function printDetails() {
     }
     
     #main{
-        height:600px;
+        height:500px;
         width: 390px;
         border: 1px solid rgb(255, 255, 255);
         margin-left:auto ;
@@ -247,7 +247,7 @@ function printDetails() {
            <hr id="line">
         <div id="amt2">
             <pre><p>एकूण देय रक्कम:                                                ${amount}</p></pre>
-            <pre><p>अक्षरी:              ${amountInWords}</p></pre>
+            <pre><p>अक्षरी:              ${amountInWords}फक्त्त</p></pre>
             <pre><p>देय माध्यम :           रोख</p></pre>
         </div>
         <div class="lastfooter">
@@ -274,9 +274,10 @@ function clearForm() {
 }
 
 function submitAndPrintDetails() {
-    printDetails();
-    storeData();
-    clearForm();
+    validateInput();
+    // printDetails();
+    // storeData();
+    // clearForm();
 }
 function storeData() {
     const paymentDate = document.getElementById('paymentDate').value;
@@ -288,10 +289,23 @@ function storeData() {
     storedData.push({ paymentDate, consumerNumber, consumerName, amount });
     localStorage.setItem('receipts', JSON.stringify(storedData));
 }
+
 function viewStoredData() {
     window.location.href = 'viewData.html';
 }
 
+function validateInput() {
+    const input = document.getElementById('consumerNumber').value;
+    if (input.length !== 12) {
+      alert("Please enter 12 digits Consumer No.");
+      return false; // Prevent form submission
+    }
+    else {
+    printDetails();
+    storeData();
+    clearForm(); // Allow form submission
+  }
+}
 window.onload = setCurrentDateTime;
 
 setInterval(setCurrentDateTime, 120000);
