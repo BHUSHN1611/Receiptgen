@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stored Receipts</title>
+    <link rel="stylesheet" href="view.css">
+</head>
+<body>
+        <div class="viewcontainer">
+    
+            <div id="header">
+                <h1>Stored Receipts</h1>
+                <button type="button" onclick="goBack()">Go Back</button>
+            </div>
+    
+            <div id="summary">
+                <p>Total Amount: <span id="totalAmount">0</span></p>
+                <p>Total Number of Receipts: <span id="totalReceipts">0</span></p>
+            </div>
+    
+            <table id="receiptsTable">
+                <thead>
+                    <tr>
+                        <th>Serial No.</th>
+                        <th>Payment Date and Time</th>
+                        <th>Consumer Number</th>
+                        <th>Consumer Name</th>
+                        <th>Amount</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+    
+            <div id="footer">
+                <button type="button" onclick="clearAllData()">Clear All Data</button>
+            </div>
+    
+        </div>
+        <script src="viewData.js"></script>
+    </body>
+</html>

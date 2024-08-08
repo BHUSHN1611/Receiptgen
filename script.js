@@ -275,7 +275,21 @@ function clearForm() {
 
 function submitAndPrintDetails() {
     printDetails();
+    storeData();
     clearForm();
+}
+function storeData() {
+    const paymentDate = document.getElementById('paymentDate').value;
+    const consumerNumber = document.getElementById('consumerNumber').value;
+    const consumerName = document.getElementById('consumerName').value;
+    const amount = document.getElementById('amount').value;
+
+    const storedData = JSON.parse(localStorage.getItem('receipts')) || [];
+    storedData.push({ paymentDate, consumerNumber, consumerName, amount });
+    localStorage.setItem('receipts', JSON.stringify(storedData));
+}
+function viewStoredData() {
+    window.location.href = 'viewData.html';
 }
 
 window.onload = setCurrentDateTime;
