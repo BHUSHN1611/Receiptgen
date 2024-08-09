@@ -257,17 +257,18 @@ function printDetails() {
         <button onclick="window.print()">Print</button>
       
     </div>
+        <script>
+            // Automatically close the popup after 2 minutes
+                setTimeout(function() {
+                window.close();
+                }, 60000);
+        </script>
     
    
 </body>
 </html>
         `);
         popup.document.close();
-
-        setTimeout(() => {
-            popup.close();
-        }, 120000); // 120000 milliseconds = 2 minutes
-
     } else {
         alert('Please fill out all fields.');
     }
