@@ -263,6 +263,11 @@ function printDetails() {
 </html>
         `);
         popup.document.close();
+
+        setTimeout(() => {
+            popup.close();
+        }, 120000); // 120000 milliseconds = 2 minutes
+
     } else {
         alert('Please fill out all fields.');
     }
