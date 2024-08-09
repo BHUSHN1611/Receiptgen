@@ -296,9 +296,19 @@ function viewStoredData() {
 
 function validateInput() {
     const input = document.getElementById('consumerNumber').value;
+    const amount = document.getElementById('amount').value.trim();
+    const consumerName = document.getElementById('consumerName').value.trim();
     if (input.length !== 12) {
       alert("Please enter 12 digits Consumer No.");
       return false; // Prevent form submission
+    }
+    if (!amount) {
+        alert("Please enter the Amount.");
+        return false;
+    }
+    if (!consumerName) {
+        alert("Please enter the Consumer Name.");
+        return false; // Prevent form submission
     }
     else {
     printDetails();

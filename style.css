@@ -84,8 +84,8 @@ label{
     height: 50px;
     width: 100%;
     outline: none;
-    font-size: 1.09rem;
-    border:1px solid grey;
+    font-size: 1.08rem;
+    border:0.5px solid rgba(128, 128, 128, 0.684);
     border-radius: 4px;
     padding: 0 15px;
 }
@@ -97,17 +97,27 @@ label{
     font-size: 1.09rem;
     color: white;
     border: none;
-    border-radius: 4px;
     padding: 0 15px;
     margin-top: 25px;
-    background-color:  #28a745;
+    line-height: 15px;
+    border-radius: 4px;
+    text-shadow: 1px 1px 1px #00000040;
+    background: linear-gradient(140.14deg, #0eec67 15.05%, #2ed61f 114.99%) padding-box,linear-gradient(142.51deg,  #0eec67 8.65%,  #2ed61f 88.82%) border-box;
+}
+.btn-pay button:hover{
+    opacity: 80%;
+    box-shadow: none;
 }
 .btn-pay:active{
-    opacity: 0.7;
+    opacity: 70%;
 }
 input:active , input:focus{
-    box-shadow: 2px 1px 8px rgba(0, 157, 255, 0.956); 
+    /* box-shadow: 2px 1px 8px rgba(0, 157, 255, 0.956);  */
+    border-color: rgb(0, 140, 255) ;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 157, 255, 0.3);  
 }
+
 
 
 
