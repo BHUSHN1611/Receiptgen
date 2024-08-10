@@ -56,6 +56,16 @@ function setCurrentDateTime() {
     const formattedDateTime = new Intl.DateTimeFormat('en-GB', options).format(now).replace(',', '');
     document.getElementById('paymentDate').value = formattedDateTime;
 }
+// Generates a random number between 100 and 999
+const prefixforreceipt = "W275530008";
+    const randomDigits = Math.floor(100 + Math.random() * 900); 
+    const receiptNumber = prefixforreceipt + randomDigits;
+
+// Generates a random number between 1000000 and 9999999
+const prefixforbill  = "00000252";
+    const randomDigit = Math.floor(1000000 + Math.random()*9999999);
+    const billNumber = prefixforbill + randomDigit;
+
 
 function printDetails() {
     const paymentDate = document.getElementById('paymentDate').value;
@@ -114,7 +124,7 @@ function printDetails() {
     }
     .section>pre>p{
         text-align: left;
-        font-size: 13px;
+        font-size: 13.5px;
         margin-left:45px;
         margin-right:45px;
         margin-top: 0px;
@@ -148,7 +158,7 @@ function printDetails() {
         text-align: left;
         margin-left:45px;
         margin-right:45px;
-        font-size: 13px;
+        font-size: 13.5px;
         margin-top: 0px;
         margin-bottom: -2.5px;
     }
@@ -156,7 +166,7 @@ function printDetails() {
         text-align: left;
         margin-left:45px;
         margin-right:45px;
-        font-size: 13px;
+        font-size: 13.5px;
         margin-top: 0px;
         margin-bottom: -2.5px;
         
@@ -165,7 +175,7 @@ function printDetails() {
         text-align: left;
         margin-left:45px;
         margin-right:45px;
-        font-size: 13px;
+        font-size: 13.5px;
         margin-top: 0px;
         margin-bottom: -2.5px;
         
@@ -174,7 +184,7 @@ function printDetails() {
         text-align: center;
         margin-left:45px;
         margin-right:45px;
-        font-size: 12px;
+        font-size: 13.5px;
         margin-top: 1px;
         margin-bottom: -2.5px;
     
@@ -222,9 +232,9 @@ function printDetails() {
         </div>
 
         <div class="section">
-            <pre><p>देय दिनांक:                                     ${paymentDate}</p></pre>
-            <pre><p>पावती नं:                                           W281250058407</p></pre>
-            <pre><p>बिल नं:                                           000002501626583</p></pre>
+            <pre><p>देय दिनांक:                                ${paymentDate}</p></pre>
+            <pre><p>पावती नं:                                      ${receiptNumber}</p></pre>
+            <pre><p>बिल नं:                                      ${billNumber}</p></pre>
         </div>
             <hr id="line">
         <div id="consemerdetails">ग्राहक तपशील</div>
@@ -238,7 +248,7 @@ function printDetails() {
         </div>
             <hr id="line">
         <div id="amt">
-                 <pre><p>पावती                                                                 रक्कम</p></pre>
+                 <pre><p>पावती प्रकार                                                     रक्कम</p></pre>
         </div>
             <hr id="line">
         <div id="amt1">
@@ -247,7 +257,7 @@ function printDetails() {
            <hr id="line">
         <div id="amt2">
             <pre><p>एकूण देय रक्कम:                                                ${amount}</p></pre>
-            <pre><p>अक्षरी:              ${amountInWords}फक्त्त</p></pre>
+            <pre><p>अक्षरी:              ${amountInWords} फक्त्त</p></pre>
             <pre><p>देय माध्यम :           रोख</p></pre>
         </div>
         <div class="lastfooter">
