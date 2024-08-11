@@ -213,6 +213,11 @@ function printDetails() {
     button:active{
         opacity: 0.5;
     }
+    #lf{
+    font-size: 6px;
+    margin-top: 8px;
+    text-align: end;
+    }
     
 
     </style>
@@ -263,6 +268,9 @@ function printDetails() {
         <div class="lastfooter">
             <p>*** MSEDCL-MahaPowerPay v1.7.2 ***</p>
         </div>
+        <div id="lf">
+            <p>TEMPRECEIPT</p>
+        </div>
         
         <button onclick="window.print()">Print</button>
       
@@ -273,6 +281,7 @@ function printDetails() {
                 window.close();
                 }, 60000);
         </script>
+    
     
    
 </body>
