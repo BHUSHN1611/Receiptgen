@@ -338,7 +338,7 @@ function validateInput() {
     else {
     printDetails();
     storeData();
-    clearForm(); // Allow form submission
+    clearForm();
   }
 }
 window.onload = setCurrentDateTime;

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stored Receipts</title>
     <link rel="stylesheet" href="view.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.18/jspdf.plugin.autotable.min.js"></script>
 </head>
 <body>
         <div class="viewcontainer">
@@ -33,8 +35,9 @@
                 <tbody></tbody>
             </table>
     
-            <div id="footer">
-                <button type="button" onclick="clearAllData()">Clear All Data</button>
+            <div id="btns">
+                <button id="downloadPdf" type="button" onclick="downloadReceiptsPDF()">Download Receipt Report</button>
+                <button  id="footerbtn" type="button" onclick="clearAllData()">Clear All Data</button>   
             </div>
     
         </div>
