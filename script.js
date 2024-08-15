@@ -214,7 +214,7 @@ function printDetails() {
         opacity: 0.5;
     }
     #lf{
-    font-size: 6px;
+    font-size: 9px;
     margin-top: 8px;
     text-align: end;
     }
