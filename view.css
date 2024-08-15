@@ -1,4 +1,55 @@
-body {
+*{
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+body,html{
+    height: 100%;
+    width:100%;
+}
+img{
+    height: 40px;
+    width: 120px;
+    border-radius:4px;
+}
+.logo{
+    padding-right: 20px;
+    padding-left: 100px;
+    margin: 10px;
+
+}
+.navbar{
+    background-color: rgb(0, 157, 255);
+    
+    font-weight: 400;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.navdiv{
+    display: flex;
+    align-items: center;
+    justify-content:start;
+    margin-left: 50px; 
+}
+li{
+    list-style-type: none;
+    display:inline-block;
+}
+li a{
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    margin-right: 25px;
+    opacity: 0.7;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+li a:hover{
+    color: white;
+    font-size: 18.2px;
+    opacity: 1;
+}
+.main {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f9;
     color: #333;
@@ -8,7 +59,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 .viewcontainer {
     background: #fff;
     padding: 20px;
@@ -63,9 +113,8 @@ body {
 
 #summary p {
     font-family: 'Franklin Gothic Medium';
-    margin: 0;
-    height:20px;
-    width:250px;
+    /* height:20px;
+    width:250px; */
     text-shadow: 1px 1px 1px #00000040;
     background: linear-gradient(140.14deg, #0eec67 15.05%, #2ed61f 114.99%) padding-box,linear-gradient(142.51deg,  #0eec67 8.65%,  #2ed61f 88.82%) border-box;
     color: white;
@@ -105,23 +154,24 @@ tbody td {
 tbody tr:hover {
     background-color: #f1f1f1;
 }
-/* .action button{
-    background: linear-gradient(140.14deg, #ec540e 15.05%, #d6361f 114.99%)padding-box,linear-gradient(142.51deg, #ff9465 8.65%, #af1905 88.82%) border-box;
+tbody tr td:last-child button {
+    background: linear-gradient(140.14deg, #ec0e0e 15.05%, #d6371fd2 114.99%)padding-box,linear-gradient(142.51deg, #ff6565 8.65%, #af0505 88.82%) border-box;
     border-radius: 7px;
     border: 2px solid transparent;
     text-shadow: 1px 1px 1px #00000040;
-    box-shadow: 8px 8px 20px 0px #45090059;
-    padding: 10px 20px;
+    padding: 8px 14px;
     line-height: 15px;
     cursor: pointer;
-    transition: all 0.3s;
     color: white;
     font-size: 14px;
 }
-
-.actions button:hover {
-    background-color: #c0392b;
-} */
+tbody tr td:last-child button:hover{
+    opacity: 0.7;
+    box-shadow:none ;
+}
+tbody tr td:last-child button:active{
+    opacity: 0.7;
+}
 
 #footer {
     margin-top: 20px;

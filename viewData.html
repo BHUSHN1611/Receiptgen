@@ -9,11 +9,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.18/jspdf.plugin.autotable.min.js"></script>
 </head>
 <body>
+    <nav class="navbar">
+        <div class="navdiv">
+            <div class="logo">
+                <a href=""><img src="mpp.webp" alt="MSEDCL-MahaPowerPay"></a>
+                
+            </div>
+            <ul>
+                <li><a href="index.html">Pay bill</a></li>
+                <li><a href="viewData.html">Statement</a></li>
+                <li><a href="#">About us</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="main">
         <div class="viewcontainer">
     
             <div id="header">
                 <h1>Stored Receipts</h1>
-                <button type="button" onclick="goBack()">Go Back</button>
+                <!-- <button type="button" onclick="goBack()">Go Back</button> -->
             </div>
     
             <div id="summary">
@@ -41,6 +55,8 @@
             </div>
     
         </div>
+    </div>
         <script src="viewData.js"></script>
+    
     </body>
 </html>
